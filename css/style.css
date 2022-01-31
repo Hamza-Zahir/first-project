@@ -48,7 +48,7 @@ section:nth-child(even):not(.lauding, .Stats)::after {
   margin-right: auto;
   display: grid;
   grid-template: auto/ repeat(12, 1fr);
-  gap: 40px;
+  gap: 40px 10px;
 }
 @media (min-width: 768px) {
   .container {
