@@ -1,3 +1,4 @@
+
 /* Start Global style */
 * {
   -webkit-box-sizing: border-box;
@@ -21,7 +22,9 @@ body {
   margin: 0;
   padding: 0;
 }
-section {
+section { 
+  margin: 0;
+  width: 100%;
   padding-top: var(--section-padding-top);
   padding-bottom: var(--section-padding-bottom);
 }
@@ -43,16 +46,26 @@ section:nth-child(even):not(.lauding, .Stats)::after {
 }
 
 .container {
-  padding: 0 15px;
+  width: 100%;
+  padding: 40px 15px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   grid-template: auto/ repeat(12, 1fr);
-  gap: 40px 10px;
+  gap: 40px 0;
+  overflow: hidden;
+}
+@media (min-width: 450px) {
+  .container {
+  gap: 40px 20px;
+
+  }
 }
 @media (min-width: 768px) {
   .container {
     width: 750px;
+  gap: 35px;
+
   }
 }
 
@@ -73,8 +86,8 @@ section h2.title {
   width: fit-content;
   border: 2px solid black;
   margin: 0 auto 80px auto;
-  padding: 0 1rem;
-  font-size: 2rem;
+  padding: 0 10px;
+  font-size: 1.5rem;
   position: relative;
   transition: var(--main-transition);
   -webkit-transition: var(--main-transition);
@@ -104,10 +117,10 @@ section h2.title::before {
   z-index: -1;
 }
 section h2.title::after {
-  right: -40px;
+  right: -30px;
 }
 section h2.title::before {
-  left: -40px;
+  left: -30px;
 }
 section h2.title:hover {
   color: white;
@@ -166,10 +179,12 @@ header .container {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  padding: 15px ;
 }
 @media (min-width: 768px) {
   header .container {
     flex-direction: row;
+     
   }
 }
 
@@ -755,15 +770,27 @@ header .menu ul li i {
 
 /* start-Team */
 .Team .container {
-  gap: 30px;
+  gap: 30px 0;
+}
+@media (min-width: 660px) {
+  .Team .container {
+    gap: 30px;
+  }
 }
 
 .Team .container .box {
-  grid-column: span 12;
+  grid-column: span 11;
   display: flex;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+}
+@media (min-width: 450px) {
+  .Team .container .box {
+    /* grid-column: span 9; */
+    grid-column-start: 3 ;
+    grid-column-end:11 ;
+  }
 }
 
 @media (min-width: 660px) {
@@ -836,7 +863,6 @@ header .menu ul li i {
   -o-border-radius: 10px;
   z-index: 2;
   transition: var(--main-transition);
-
   -webkit-transition: var(--main-transition);
   -moz-transition: var(--main-transition);
   -ms-transition: var(--main-transition);
@@ -1060,10 +1086,13 @@ header .menu ul li i {
 
 .Works .container .box.img {
   grid-column: span 12;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Works .container .box.img img{
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -1667,6 +1696,7 @@ section.Stats::after {
 }
 .Discount .box {
   width: 100%;
+
 }
 
 @media (min-width: 992px) {
@@ -1708,13 +1738,13 @@ section.Stats::after {
 .Discount .box .imag img {
   width: 50%;
 }
-.Discount .box .form {
+.Discount .box .form {  
   background-color: white;
   text-align: center;
 }
 
 .Discount .box .form form {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 .Discount .box .form form input,
@@ -1989,3 +2019,4 @@ footer .copyright {
 
 
 
+ 
